@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>3D Snake AI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="info">
+      <h1>3D Snake: Self-Learning AI</h1>
+      <p>
+        The snake learns its environment with Q-Learning while navigating a 3D grid.
+      </p>
+      <p>
+        Episode: <span id="episode">0</span> | Score: <span id="score">0</span>
+      </p>
+      <!-- Buttons for exporting and importing weights -->
+      <button id="downloadWeights">Download Weights</button>
+      <label style="cursor:pointer">
+        Import Weights
+        <input id="importWeights" type="file" accept=".json" style="display:none" />
+      </label>
+      <div id="speedControl">
+        <label for="speedToggle">Game Speed (ms per move): </label>
+        <input type="range" id="speedToggle" min="50" max="500" step="10" value="200" />
+        <span id="speedValue">200</span>
+      </div>
+      <!-- Multiplayer Lobby Toggle -->
+      <button id="showLobbyButton">Show Multiplayer Lobby</button>
+    </div>
+
+    <!-- Multiplayer Lobby Modal -->
+    <div id="lobbyModal" class="modal">
+      <div class="modal-content">
+        <span id="closeLobbyModal" class="close">&times;</span>
+        <h2>Multiplayer Lobby</h2>
+        <ul id="lobbyList">
+          <!-- Dynamically populated with connected peers -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Challenge Request Modal -->
+    <div id="challengeModal" class="modal">
+      <div class="modal-content">
+        <!-- Content is dynamically set in script.js -->
+      </div>
+    </div>
+
+    <!-- Battle Simulation Modal -->
+    <div id="battleModal" class="modal">
+      <!-- Content is dynamically set in script.js -->
+    </div>
+
+    <script type="module" src="script.js"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
